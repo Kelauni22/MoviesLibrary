@@ -54,6 +54,17 @@ MoviesRatings= {
 				else
 					puts ("I'm sorry, that movie already exists. The rating is #{MoviesRatings[add]}. \n\n")
 				end
+				
+			when "dl"
+			
+				puts "What movie would you like to delete?\n\n"
+				delete = gets.chomp
+				puts ("\n")
+				MoviesRatings.delete(delete)
+				puts "The movie #{delete} has been deleted successfully!\n\n"
+				
+			
+			
 			end
 			
 			
@@ -70,13 +81,7 @@ end
 			
 		
 			
-			when "dl"
 			
-				puts "What movie would you like to delete?"
-				delete = gets.chomp			
-				MoviesRatings.delete(delete)
-				
-			end
 			
 			when "u"
 			
