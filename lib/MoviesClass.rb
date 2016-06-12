@@ -14,7 +14,7 @@ MoviesRatings= {
 
 	
 	while loop = true
-		puts "Which would you like to do?"
+		puts "Which would you like to do? \n \n"
 		puts "a.) To display full list of movies, type 'd'"
 		puts "b.) To add a new movie and rating to your list, type 'a'"
 		puts "c.) To delete a movie from your list, type 'dl'"
@@ -27,11 +27,21 @@ MoviesRatings= {
 		#Display your movies
 		case choice
 			when "d"
-					
+				 puts ("Here is your movie library: \n\n")
 				 MoviesRatings.each do |x,y|
 				 puts "#{x} has a rating of #{y}"	
 				 end
+				 loop = false
 			end
+		
+			puts ("\n")
+		
+		
+	end
+end
+
+
+=begin
 				
 
 			
@@ -80,3 +90,9 @@ MoviesRatings= {
 			end
 		end
 	end
+=end
+
+
+
+
+
