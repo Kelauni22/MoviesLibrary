@@ -21,8 +21,11 @@ MoviesRatings= {
 		puts "d.) To update a movie in your list, type 'u'"
 		puts "e.) To quit, type 'q'"
 		
-
+		
+		puts("\n")
 		choice = gets.chomp
+		puts("\n")
+		
 
 		#Display your movies
 		case choice
@@ -32,9 +35,28 @@ MoviesRatings= {
 				 puts "#{x} has a rating of #{y}"	
 				 end
 				 loop = false
-			end
+			
 		
 			puts ("\n")
+			
+			when "a" 
+
+				 puts "\n What movie would you like to add? \n\n"
+				 add = gets.chomp
+				 puts ("\n")
+				 				 
+				 if MoviesRatings[add].nil?
+					 puts "What would you rate that movie?\n\n"
+					 rate = gets.chomp
+					 puts ("\n")
+					 MoviesRatings[add] = rate.to_i
+					 puts "The movie #{add} and the rating of #{rate} have been added to your movie library. \n\n"
+				else
+					puts ("I'm sorry, that movie already exists. The rating is #{MoviesRatings[add]}. \n\n")
+				end
+			end
+			
+			
 		
 		
 	end
@@ -45,16 +67,7 @@ end
 				
 
 			
-			when "a" 
-
-				 puts "What movie would you like to add?"
-				 add = gets.chomp
-				 puts "What would you rate that movie?"
-				 rate = gets.chomp
-				 
-				 MoviesRatings[add] = rate.to_i
-				 puts "The movie #{add} and the rating of #{rate} has been added to your movie library."
-			end
+			
 		
 			
 			when "dl"
