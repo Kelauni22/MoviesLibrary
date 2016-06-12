@@ -3,11 +3,15 @@ class Movies
 attr_accessor: MoviesRatings
 attr_accessor: add
 attr_accessor: rate
+attr_accessor: choice
+attr_accessor: rating
 
 	def initialize(MoviesRatings)
 	@MoviesRatings = {}
 	@add = ""
 	@rate = ""
+	@choice = ""
+	@rating = 0
 
 	end
 
@@ -50,10 +54,7 @@ MoviesRatings= {
 	end
 	
 	
-	
-	
 	def delete(delete)
-	
 	delete = gets.chomp
 	puts ("\n")
 	
@@ -62,6 +63,28 @@ MoviesRatings= {
 		else
 			MoviesRatings.delete(delete)
 			puts "The movie #{delete} has been deleted successfully!\n\n"
+		end
+	end
+	
+	def update(choice, rating)
+	
+	if @MoviesRatings[@movie].nil?
+		puts "Sorry, that movie does not exist! \n\n"
+		
+		else
+		puts "What is the new rating?\n\n"
+		rating = gets.chomp.to_i
+		
+		@rating = rating
+		@MoviesRatings[@movie] = @rating
+		puts "\n\n The movie #{@movie} has been udpated to a rating of #{@rating}\n\n"
+		end
+	end
+	
+	def quit(choice)
+		if (choice == "y")
+		break
+				
 		end
 	end
 	

@@ -27,8 +27,9 @@ while loop = true
 
 				 puts "\n What movie would you like to add? \n\n"
 				 add()
+				 puts ("\n")
 				 puts "What would you rate that movie?\n\n"
-				 rate(add())
+				 rate()
 				
 			when "dl"
 			
@@ -40,16 +41,9 @@ while loop = true
 				puts "What movie would you like to update? \n\n"
 				movie = gets.chomp
 				puts "\n\n"
+				update()
 				
-				if MoviesRatings[movie].nil?
-					puts "Sorry, that movie does not exist! \n\n"
-				else
-				puts "What is the new rating?\n\n"
-				rating = gets.chomp.to_i
 				
-				MoviesRatings[movie] = rating
-				puts "\n\n The movie #{movie} has been udpated to a rating of #{rating}\n\n"
-				end
 			
 			when "q"
 			
@@ -57,12 +51,7 @@ while loop = true
 			choice = gets.chomp.downcase
 			
 			
-				if (choice == "y")
-				break
-				
-				end
-				
-				
+							
 			
 			end
 			
