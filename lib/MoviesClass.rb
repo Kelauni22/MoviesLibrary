@@ -34,8 +34,7 @@ MoviesRatings= {
 				 MoviesRatings.each do |x,y|
 				 puts "#{x} has a rating of #{y}"	
 				 end
-				 loop = false
-			
+					
 		
 			puts ("\n")
 			
@@ -60,55 +59,50 @@ MoviesRatings= {
 				puts "What movie would you like to delete?\n\n"
 				delete = gets.chomp
 				puts ("\n")
-				MoviesRatings.delete(delete)
-				puts "The movie #{delete} has been deleted successfully!\n\n"
+				
+				if MoviesRatings[delete].nil?
+					puts "Sorry, that movie does not exist!"
+				else
+					MoviesRatings.delete(delete)
+					puts "The movie #{delete} has been deleted successfully!\n\n"
+				end
+			
+			when "u"
+			
+				puts "What movie would you like to update? \n\n"
+				movie = gets.chomp
+				puts "\n\n"
+				
+				if MoviesRatings[movie].nil?
+					puts "Sorry, that movie does not exist! \n\n"
+				else
+				puts "What is the new rating?\n\n"
+				rating = gets.chomp.to_i
+				
+				MoviesRatings[movie] = rating
+				puts "\n\n The movie #{movie} has been udpated to a rating of #{rating}\n\n"
+				end
+			
+			when "q"
+			
+			puts "Are you sure you want to quit? Type 'y' for yes.\n\n"
+			choice = gets.chomp.downcase
+			
+			
+				if (choice == "y")
+				break
+				
+				end
+				
 				
 			
-			
 			end
-			
 			
 		
 		
 	end
 end
 
-
-=begin
-				
-
-			
-			
-		
-			
-			
-			
-			when "u"
-			
-				puts "What movie would you like to update?"
-				movie = gets.chomp
-				puts "What is the new rating?"
-				rating = gets.chomp.to_i
-				
-				MoviesRatings[movie] = rating
-				puts "The movie #{movie} has been udpated to a rating of #{rating}"
-			end
-			
-			
-			when "q"
-			
-			puts "Are you sure you want to quit? Type 'y' for yes."
-			choice = gets.chomp.downcase
-			
-			
-				if "y"
-					loop = false;
-				end
-				
-			end
-		end
-	end
-=end
 
 
 
