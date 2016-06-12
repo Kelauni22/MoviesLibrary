@@ -3,17 +3,7 @@ require './lib/MoviesClass.rb'
 MoviesProgram = Movies.new
 
 while loop = true
-		puts "Which would you like to do? \n \n"
-		puts "a.) To display full list of movies, type 'd'"
-		puts "b.) To add a new movie and rating to your list, type 'a'"
-		puts "c.) To delete a movie from your list, type 'dl'"
-		puts "d.) To update a movie in your list, type 'u'"
-		puts "e.) To quit, type 'q'"
-		
-		
-		puts("\n")
-		choice = gets.chomp
-		puts("\n")
+		questions()
 		
 
 		#Display your movies
@@ -21,7 +11,7 @@ while loop = true
 			when "d"
 				 puts ("Here is your movie library: \n\n")
 				 display()
-			puts ("\n")
+				 puts ("\n")
 			
 			when "a" 
 
@@ -30,6 +20,7 @@ while loop = true
 				 puts ("\n")
 				 puts "What would you rate that movie?\n\n"
 				 rate()
+				 new_rate()
 				
 			when "dl"
 			
@@ -49,6 +40,7 @@ while loop = true
 			
 			puts "Are you sure you want to quit? Type 'y' for yes.\n\n"
 			choice = gets.chomp.downcase
+			quit(choice)
 			
 			
 							

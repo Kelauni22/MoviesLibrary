@@ -5,13 +5,16 @@ attr_accessor: add
 attr_accessor: rate
 attr_accessor: choice
 attr_accessor: rating
+attr_accessor: delete
 
-	def initialize(MoviesRatings)
+	def initialize(MoviesRatings, add, rate, chice, rating, delete, movie)
 	@MoviesRatings = {}
 	@add = ""
 	@rate = ""
 	@choice = ""
 	@rating = 0
+	@delete = ""
+	@movie = ""
 
 	end
 
@@ -25,21 +28,37 @@ MoviesRatings= {
 "Love Jones" => 1
 }
 
+	def questions()
+		puts "Which would you like to do? \n \n"
+		puts "a.) To display full list of movies, type 'd'"
+		puts "b.) To add a new movie and rating to your list, type 'a'"
+		puts "c.) To delete a movie from your list, type 'dl'"
+		puts "d.) To update a movie in your list, type 'u'"
+		puts "e.) To quit, type 'q'"
+		
+		
+		puts("\n")
+		choice = gets.chomp
+		puts("\n")
+		@choice = choice
+		return @choice
+	end
+
 	def display()
 		@MoviesRatings.each do |x,y|
 		puts "#{x} has a rating of #{y}"	
 		end		
 	end
 	
-	def add(add)
-		@add = add
+	def add()
 		add = gets.chomp
+		@add = add
 		return @add
 	end
 	
-	def rate(rate)
-		@rate=rate
+	def rate()
 		rate = gets.chomp
+		@rate=rate		
 		puts ("\n")
 		return @rate
 	end
@@ -54,7 +73,7 @@ MoviesRatings= {
 	end
 	
 	
-	def delete(delete)
+	def delete()
 	delete = gets.chomp
 	puts ("\n")
 	
@@ -66,7 +85,7 @@ MoviesRatings= {
 		end
 	end
 	
-	def update(choice, rating)
+	def update()
 	
 	if @MoviesRatings[@movie].nil?
 		puts "Sorry, that movie does not exist! \n\n"
@@ -82,7 +101,8 @@ MoviesRatings= {
 	end
 	
 	def quit(choice)
-		if (choice == "y")
+		@choice = choice
+		if (@choice == "y")
 		break
 				
 		end
