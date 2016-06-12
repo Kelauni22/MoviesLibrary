@@ -27,26 +27,29 @@ MoviesRatings= {
 		end		
 	end
 	
-	def add(add, rate)
+	def add(add)
 		@add = add
-		@rate = rate
 		add = gets.chomp
+		return @add
+	end
+	
+	def rate(rate)
+		@rate=rate
+		rate = gets.chomp
 		puts ("\n")
-				 
-		 if @MoviesRatings[add].nil?
-			 
-			 
-			 @MoviesRatings[add] = rate.to_i
-			 puts "The movie #{add} and the rating of #{rate} have been added to your movie library. \n\n"
+		return @rate
+	end
+	
+	def new_rate()
+		if 	@MoviesRatings[@add].nil?
+			@MoviesRatings[@add] = @rate.to_i
+			puts "The movie #{@add} and the rating of #{@rate} have been added to your movie library. \n\n"
 		else
-			puts ("I'm sorry, that movie already exists. The rating is #{@MoviesRatings[add]}. \n\n")
+			puts ("I'm sorry, that movie already exists. The rating is #{@MoviesRatings[@add]}. \n\n")
 		end
 	end
 	
-	def rate()
-		
-		rate = gets.chomp
-				 puts ("\n")
+	
 	
 	
 	def delete(delete)
