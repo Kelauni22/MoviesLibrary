@@ -2,7 +2,8 @@ require './lib/MoviesClass.rb'
 
 MoviesProgram = Movies.new
 
-while loop = true
+while loop == true
+
 		questions()
 		
 
@@ -41,8 +42,7 @@ while loop = true
 			puts "Are you sure you want to quit? Type 'y' for yes.\n\n"
 			choice = gets.chomp.downcase
 			quit(choice)
-			
-			
+						
 							
 			
 			end

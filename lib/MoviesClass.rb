@@ -1,13 +1,13 @@
 class Movies
 
-attr_accessor: MoviesRatings
-attr_accessor: add
-attr_accessor: rate
-attr_accessor: choice
-attr_accessor: rating
-attr_accessor: delete
+attr_accessor :moviesratings
+attr_accessor :add
+attr_accessor :rate
+attr_accessor :choice
+attr_accessor :rating
+attr_accessor :delete
 
-	def initialize(MoviesRatings, add, rate, chice, rating, delete, movie)
+	def initialize()
 	@MoviesRatings = {}
 	@add = ""
 	@rate = ""
@@ -18,7 +18,7 @@ attr_accessor: delete
 
 	end
 
-MoviesRatings= {
+moviesratings= {
 
 "Django Unchained" => 4.5,
 "A Goofy Movie" => 5,
@@ -45,7 +45,7 @@ MoviesRatings= {
 	end
 
 	def display()
-		@MoviesRatings.each do |x,y|
+		@moviesratings.each do |x,y|
 		puts "#{x} has a rating of #{y}"	
 		end		
 	end
@@ -64,11 +64,11 @@ MoviesRatings= {
 	end
 	
 	def new_rate()
-		if 	@MoviesRatings[@add].nil?
-			@MoviesRatings[@add] = @rate.to_i
+		if 	@moviesratings[@add].nil?
+			@moviesratings[@add] = @rate.to_i
 			puts "The movie #{@add} and the rating of #{@rate} have been added to your movie library. \n\n"
 		else
-			puts ("I'm sorry, that movie already exists. The rating is #{@MoviesRatings[@add]}. \n\n")
+			puts ("I'm sorry, that movie already exists. The rating is #{@moviesratings[@add]}. \n\n")
 		end
 	end
 	
@@ -77,17 +77,17 @@ MoviesRatings= {
 	delete = gets.chomp
 	puts ("\n")
 	
-		if MoviesRatings[delete].nil?
+		if moviesratings[delete].nil?
 			puts "Sorry, that movie does not exist!"
 		else
-			MoviesRatings.delete(delete)
+			moviesratings.delete(delete)
 			puts "The movie #{delete} has been deleted successfully!\n\n"
 		end
 	end
 	
 	def update()
 	
-	if @MoviesRatings[@movie].nil?
+	if @moviesratings[@movie].nil?
 		puts "Sorry, that movie does not exist! \n\n"
 		
 		else
@@ -95,7 +95,7 @@ MoviesRatings= {
 		rating = gets.chomp.to_i
 		
 		@rating = rating
-		@MoviesRatings[@movie] = @rating
+		@moviesratings[@movie] = @rating
 		puts "\n\n The movie #{@movie} has been udpated to a rating of #{@rating}\n\n"
 		end
 	end
@@ -103,8 +103,7 @@ MoviesRatings= {
 	def quit(choice)
 		@choice = choice
 		if (@choice == "y")
-		break
-				
+					
 		end
 	end
 	
