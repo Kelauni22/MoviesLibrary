@@ -2,51 +2,57 @@ require './lib/MoviesClass.rb'
 
 MoviesProgram = Movies.new
 
+loop = true
 while loop == true
 
-		questions()
+		MoviesProgram.questions()
 		
 
 		#Display your movies
-		case choice
-			when "d"
-				 puts ("Here is your movie library: \n\n")
-				 display()
-				 puts ("\n")
-			
-			when "a" 
+		
+		if MoviesProgram.choice == "d"
+			 puts ("Here is your movie library: \n\n")
+			 MoviesProgram.display()
+			 puts ("\n")
+		
+		
+		elsif MoviesProgram.choice == "a" 
 
-				 puts "\n What movie would you like to add? \n\n"
-				 add()
-				 puts ("\n")
-				 puts "What would you rate that movie?\n\n"
-				 rate()
-				 new_rate()
-				
-			when "dl"
+			 puts "\n What movie would you like to add? \n\n"
+			 MoviesProgram.add()
+			 puts ("\n")
+			 puts "What would you rate that movie?\n\n"
+			 MoviesProgram.rate()
+			 MoviesProgram.new_rate()
+					
 			
-				puts "What movie would you like to delete?\n\n"
-				delete()
+		elsif MoviesProgram.choice == "dl"
+		
+			puts "What movie would you like to delete?\n\n"
+			MoviesProgram._delete()
+					
+		
+		elsif MoviesProgram.choice == "u"
+		
+			puts "What movie would you like to update? \n\n"
+			movie = gets.chomp
+			puts "\n\n"
+			MoviesProgram.update()
+		
 			
-			when "u"
-			
-				puts "What movie would you like to update? \n\n"
-				movie = gets.chomp
-				puts "\n\n"
-				update()
-				
-				
-			
-			when "q"
-			
+		elsif MoviesProgram.choice =="q"
+		
 			puts "Are you sure you want to quit? Type 'y' for yes.\n\n"
 			choice = gets.chomp.downcase
-			quit(choice)
+			MoviesProgram.quit(choice)
+		
+		else
+		
+			puts "That wasn't one of the choices! Try again."
+		
+			
+		
+		end
 						
-							
-			
-			end
-			
-		
-		
+								
 	end

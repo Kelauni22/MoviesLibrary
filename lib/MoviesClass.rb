@@ -8,7 +8,6 @@ attr_accessor :rating
 attr_accessor :delete
 
 	def initialize()
-	@MoviesRatings = {}
 	@add = ""
 	@rate = ""
 	@choice = ""
@@ -16,17 +15,20 @@ attr_accessor :delete
 	@delete = ""
 	@movie = ""
 
+	
+
+	@moviesratings= {
+
+	"Django Unchained" => 4.5,
+	"A Goofy Movie" => 5,
+	"Zoolander" => 2.5,
+	"The Notebook" => 5,
+	"American Pie" => 3.5,
+	"Love Jones" => 1
+	}
+
 	end
 
-moviesratings= {
-
-"Django Unchained" => 4.5,
-"A Goofy Movie" => 5,
-"Zoolander" => 2.5,
-"The Notebook" => 5,
-"American Pie" => 3.5,
-"Love Jones" => 1
-}
 
 	def questions()
 		puts "Which would you like to do? \n \n"
@@ -41,7 +43,7 @@ moviesratings= {
 		choice = gets.chomp
 		puts("\n")
 		@choice = choice
-		return @choice
+		
 	end
 
 	def display()
@@ -73,15 +75,15 @@ moviesratings= {
 	end
 	
 	
-	def delete()
-	delete = gets.chomp
+	def _delete()
+	input = gets.chomp
 	puts ("\n")
-	
-		if moviesratings[delete].nil?
+		
+		if @moviesratings[input].nil?
 			puts "Sorry, that movie does not exist!"
 		else
-			moviesratings.delete(delete)
-			puts "The movie #{delete} has been deleted successfully!\n\n"
+			@moviesratings.delete(input)
+			puts "The movie #{input} has been deleted successfully!\n\n"
 		end
 	end
 	
@@ -102,9 +104,7 @@ moviesratings= {
 	
 	def quit(choice)
 		@choice = choice
-		if (@choice == "y")
-					
-		end
+		abort() unless @choice != "y"
 	end
 	
 end
