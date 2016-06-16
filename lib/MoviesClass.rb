@@ -105,6 +105,7 @@ attr_accessor :delete
 	def quit(choice)
 		@choice = choice
 		abort() unless @choice != "y"
+		puts ("\n")
 	end
 	
 end

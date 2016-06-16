@@ -2,13 +2,13 @@ require "MoviesClass"
 
 describe Movies do
 
-	describe ".convert" do
+	describe ".questions" do
 	
-		context "given number >= 50" do	
+		context "given a choice letter" do	
 			it "returns number of fifties" do
-				cr = CashRegister.new
-				result = cr.convert(50)
-				expect(result).to eql("1 fifty(s)")
+				cr = Movies.new
+				result = cr.questions("a")
+				expect(result).to eql(true)
 			end
 		end
 	end		
