@@ -76,4 +76,59 @@ describe Movies do
 		end
 	end
 	
+	describe ".delete if nil" do
+	
+		context "when given a movie input" do	
+			it "it returns that the movie doesn't exist" do
+				cr = Movies.new
+				cr.moviesratings = {}
+				cr.input = "Dumbo"
+				result = cr.delete()
+				expect(result).to eql("Sorry, that movie does not exist! \n\n")
+			end
+		end
+	end
+	
+		
+	describe ".delete" do
+	
+		context "when given a movie input" do	
+			it "it returns that the movie has been deleted" do
+				cr = Movies.new
+				cr.moviesratings = {"Dumbo" => 4}
+				cr.input = "Dumbo"
+				result = cr.delete()
+				expect(result).to eql("The movie Dumbo has been deleted successfully!\n\n")
+			end
+		end
+	end
+	
+	describe ".update not nil" do
+	
+		context "when given a movie input" do	
+			it "it returns that the movie has been updated with the updated rating" do
+				cr = Movies.new
+				cr.moviesratings = {"Dumbo" => 4}
+				cr.movie = "Dumbo"
+				cr.rating = 5
+				result = cr.update()
+				expect(result).to eql("\n\n The movie Dumbo has been udpated to a rating of 5\n\n")
+			end
+		end
+	end
+	
+	describe ".update nil" do
+	
+		context "when given a movie input" do	
+			it "it returns that the movie doesn't exist" do
+				cr = Movies.new
+				cr.moviesratings = {}
+				cr.movie = "Dumbo"
+				result = cr.update()
+				expect(result).to eql("Sorry, that movie does not exist! \n\n")
+			end
+		end
+	end
+	
+	
 end

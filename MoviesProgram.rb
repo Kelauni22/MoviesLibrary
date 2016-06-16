@@ -20,10 +20,12 @@ while loop == true
 		elsif MoviesProgram.choice == "a" 
 
 			 puts "\n What movie would you like to add? \n\n"
+			 add = gets.chomp
 			 MoviesProgram.add()
 			 puts ("\n")
 			 puts "What would you rate that movie?\n\n"
 			 MoviesProgram.rate()
+			 rate = gets.chomp
 			 puts ("\n")
 			 puts MoviesProgram.new_rate()
 					
@@ -31,7 +33,9 @@ while loop == true
 		elsif MoviesProgram.choice == "dl"
 		
 			puts "What movie would you like to delete?\n\n"
-			MoviesProgram._delete()
+			input = gets.chomp
+			puts ("\n")
+			puts MoviesProgram._delete()
 					
 		
 		elsif MoviesProgram.choice == "u"
@@ -39,7 +43,7 @@ while loop == true
 			puts "What movie would you like to update? \n\n"
 			movie = gets.chomp
 			puts "\n\n"
-			MoviesProgram.update()
+			puts MoviesProgram.update()
 		
 			
 		elsif MoviesProgram.choice =="q"

@@ -6,6 +6,8 @@ attr_accessor :rate
 attr_accessor :choice
 attr_accessor :rating
 attr_accessor :delete
+attr_accessor :input
+attr_accessor :movie
 
 	def initialize()
 	@add = ""
@@ -14,6 +16,7 @@ attr_accessor :delete
 	@rating = 0
 	@delete = ""
 	@movie = ""
+	@input = ""
 	
 
 	@moviesratings= {
@@ -81,29 +84,37 @@ attr_accessor :delete
 	
 	
 	def _delete()
-	input = gets.chomp
-	puts ("\n")
-		
-		if @moviesratings[input].nil?
-			puts "Sorry, that movie does not exist!"
+		display_return3 = ""
+		display_return4 = ""
+		moviesratings = @moviesratings
+		input = @input
+			
+		if @moviesratings[@input].nil?
+			display_return3 << "Sorry, that movie does not exist!"
 		else
-			@moviesratings.delete(input)
-			puts "The movie #{input} has been deleted successfully!\n\n"
+			@moviesratings.delete(@input)
+			display_return4 << "The movie #{@input} has been deleted successfully!\n\n"
 		end
 	end
 	
 	def update()
 	
+		display_return5 = ""
+		display_return6 = ""
+		display_return7 = ""
+		moviesratings = @moviesratings
+		rating = @rating
+		movie = @movie
+	
 	if @moviesratings[@movie].nil?
-		puts "Sorry, that movie does not exist! \n\n"
+		display_return5 << "Sorry, that movie does not exist! \n\n"
 		
 		else
-		puts "What is the new rating?\n\n"
+		display_return6 << "What is the new rating?\n\n"
 		rating = gets.chomp.to_i
 		
-		@rating = rating
 		@moviesratings[@movie] = @rating
-		puts "\n\n The movie #{@movie} has been udpated to a rating of #{@rating}\n\n"
+		display_return7 << "\n\n The movie #{@movie} has been udpated to a rating of #{@rating}\n\n"
 		end
 	end
 	
