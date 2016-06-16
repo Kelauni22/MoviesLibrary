@@ -63,16 +63,19 @@ attr_accessor :delete
 	def rate()
 		rate = @rate
 		@rate = gets.chomp.to_i		
-		puts ("\n")
 		return rate
 	end
 	
 	def new_rate()
+		display_return = ""
+		display_return2 = ""
+		moviesratings = @moviesratings
+		add = @add
 		if 	@moviesratings[@add].nil?
 			@moviesratings[@add] = @rate.to_i
-			puts "The movie #{@add} and the rating of #{@rate} have been added to your movie library. \n\n"
+			display_return << "The movie #{@add} and the rating of #{@rate} have been added to your movie library. \n\n"
 		else
-			puts ("I'm sorry, that movie already exists. The rating is #{@moviesratings[@add]}. \n\n")
+			display_return2 << "I'm sorry, that movie already exists. The rating is #{@moviesratings[@add]}. \n\n"
 		end
 	end
 	

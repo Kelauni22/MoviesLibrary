@@ -24,7 +24,8 @@ while loop == true
 			 puts ("\n")
 			 puts "What would you rate that movie?\n\n"
 			 MoviesProgram.rate()
-			 MoviesProgram.new_rate()
+			 puts ("\n")
+			 puts MoviesProgram.new_rate()
 					
 			
 		elsif MoviesProgram.choice == "dl"

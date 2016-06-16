@@ -48,4 +48,32 @@ describe Movies do
 			end
 		end
 	end
+	
+	describe ".new_rate" do
+	
+		context "when given a movie and new rate" do	
+			it "it returns the correct 'display_result' in class" do
+				cr = Movies.new
+				cr.moviesratings = {}
+				cr.add = "Dumbo"
+				cr.rate = 4
+				result = cr.new_rate()
+				expect(result).to eql("The movie Dumbo and the rating of 4 have been added to your movie library. \n\n")
+			end
+		end
+	end
+	
+	describe ".new_rate" do
+	
+		context "when given a movie input" do	
+			it "it returns the 'display_result2'" do
+				cr = Movies.new
+				cr.moviesratings = {"Dumbo" => 4}
+				cr.add = "Dumbo"
+				result = cr.new_rate()
+				expect(result).to eql("I'm sorry, that movie already exists. The rating is 4. \n\n")
+			end
+		end
+	end
+	
 end
