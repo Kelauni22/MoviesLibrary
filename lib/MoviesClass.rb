@@ -55,9 +55,9 @@ attr_accessor :delete
 	end
 	
 	def add()
-		add = gets.chomp
-		@add = add
-		return @add
+		add = @add
+		@add = gets.chomp
+		return add
 	end
 	
 	def rate()
