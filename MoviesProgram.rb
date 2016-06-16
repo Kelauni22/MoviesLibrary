@@ -12,7 +12,8 @@ while loop == true
 		
 		if MoviesProgram.choice == "d"
 			 puts ("Here is your movie library: \n\n")
-			 MoviesProgram.display()
+			 puts MoviesProgram.display()
+		
 			 puts ("\n")
 		
 		

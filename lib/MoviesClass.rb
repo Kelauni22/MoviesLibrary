@@ -14,7 +14,6 @@ attr_accessor :delete
 	@rating = 0
 	@delete = ""
 	@movie = ""
-
 	
 
 	@moviesratings= {
@@ -28,7 +27,7 @@ attr_accessor :delete
 	}
 
 	end
-
+	
 
 	def questions()
 		puts "Which would you like to do? \n \n"
@@ -43,13 +42,16 @@ attr_accessor :delete
 		choice = gets.chomp
 		puts("\n")
 		@choice = choice
+		return @choice
 		
 	end
 
 	def display()
+		display_return = ""
 		@moviesratings.each do |x,y|
-		puts "#{x} has a rating of #{y}"	
+		display_return << "#{x} has a rating of #{y} \n"	
 		end		
+		return display_return
 	end
 	
 	def add()
