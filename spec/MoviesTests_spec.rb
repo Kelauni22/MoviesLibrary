@@ -36,4 +36,16 @@ describe Movies do
 			end
 		end
 	end	
+	
+	describe ".rate" do
+	
+		context "when given an rate input" do	
+			it "it returns that same input" do
+				cr = Movies.new
+				cr.rate = 4
+				result = cr.rate()
+				expect(result).to eql(4)
+			end
+		end
+	end
 end

@@ -9,7 +9,7 @@ attr_accessor :delete
 
 	def initialize()
 	@add = ""
-	@rate = ""
+	@rate = 0
 	@choice = ""
 	@rating = 0
 	@delete = ""
@@ -61,10 +61,10 @@ attr_accessor :delete
 	end
 	
 	def rate()
-		rate = gets.chomp
-		@rate=rate		
+		rate = @rate
+		@rate = gets.chomp.to_i		
 		puts ("\n")
-		return @rate
+		return rate
 	end
 	
 	def new_rate()
