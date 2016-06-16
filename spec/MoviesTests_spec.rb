@@ -76,28 +76,28 @@ describe Movies do
 		end
 	end
 	
-	describe ".delete if nil" do
+	describe "._delete if nil" do
 	
 		context "when given a movie input" do	
 			it "it returns that the movie doesn't exist" do
 				cr = Movies.new
 				cr.moviesratings = {}
 				cr.input = "Dumbo"
-				result = cr.delete()
+				result = cr._delete()
 				expect(result).to eql("Sorry, that movie does not exist! \n\n")
 			end
 		end
 	end
 	
 		
-	describe ".delete" do
+	describe "._delete" do
 	
 		context "when given a movie input" do	
 			it "it returns that the movie has been deleted" do
 				cr = Movies.new
 				cr.moviesratings = {"Dumbo" => 4}
 				cr.input = "Dumbo"
-				result = cr.delete()
+				result = cr._delete()
 				expect(result).to eql("The movie Dumbo has been deleted successfully!\n\n")
 			end
 		end
@@ -129,6 +129,18 @@ describe Movies do
 			end
 		end
 	end
+	
+	describe ".quit2 wrong letter" do
+	
+		context "when type a letter" do	
+			it "the program says not a choice" do
+				cr = Movies.new
+				cr.choice = "z"
+				result = cr.quit()
+				expect(result).to eql("Not a choice")
+			end
+		end
+	end
 
 	describe ".quit nil" do
 	
@@ -142,16 +154,12 @@ describe Movies do
 		end
 	end
 	
-	describe ".quit wrong letter" do
 	
-		context "when type a letter" do	
-			it "the program says not a choice" do
-				cr = Movies.new
-				cr.choice = "z"
-				result = cr.quit()
-				expect(result).to eql ("Not a choice")
-			end
-		end
-	end
+
 	
+
 end
+	
+
+	
+

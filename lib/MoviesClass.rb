@@ -90,7 +90,7 @@ attr_accessor :movie
 		input = @input
 			
 		if @moviesratings[@input].nil?
-			display_return3 << "Sorry, that movie does not exist!"
+			display_return3 << "Sorry, that movie does not exist! \n\n"
 		else
 			@moviesratings.delete(@input)
 			display_return4 << "The movie #{@input} has been deleted successfully!\n\n"
@@ -119,9 +119,12 @@ attr_accessor :movie
 	end
 	
 	def quit()
+		display_return8 = ""
 		choice = @choice
-		abort() unless @choice != "y"
+		unless @choice != "y" then abort()
+		else
 		display_return8 << "Not a choice"
+		end
 	end
 	
 end
