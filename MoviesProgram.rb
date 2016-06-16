@@ -50,10 +50,14 @@ while loop == true
 		
 			puts "Are you sure you want to quit? Type 'y' for yes.\n\n"
 			choice = gets.chomp.downcase
-			MoviesProgram.quit()
-			puts ("\n")
-		
-		end
+			answer = MoviesProgram.should_quit()
+				if choice == "y" then abort()
+				else
+					puts answer
+				end
+					puts ("\n")
+				
+				end
 						
 								
 	end

@@ -2,6 +2,7 @@ require "MoviesClass"
 
 describe Movies do
 
+
 	describe ".display hardcoded" do
 	
 		context "when running the function" do	
@@ -136,23 +137,24 @@ describe Movies do
 			it "the program says not a choice" do
 				cr = Movies.new
 				cr.choice = "z"
-				result = cr.quit()
+				result = cr.should_quit()
 				expect(result).to eql("Not a choice")
 			end
 		end
 	end
 
 	describe ".quit nil" do
-	
+
 		context "when type 'y'" do	
-			it "the program quits" do
+			it "the program quits - make sure that this is last" do
 				cr = Movies.new
 				cr.choice = "y"
-				result = cr.quit()
-				expect(result).to eql (nil)
+				result = cr.should_quit()
+				expect(result).to eql ("y")
 			end
 		end
 	end
+
 	
 	
 
