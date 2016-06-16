@@ -118,10 +118,10 @@ attr_accessor :movie
 		end
 	end
 	
-	def quit(choice)
-		@choice = choice
+	def quit()
+		choice = @choice
 		abort() unless @choice != "y"
-		puts ("\n")
+		display_return8 << "Not a choice"
 	end
 	
 end

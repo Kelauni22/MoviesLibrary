@@ -129,6 +129,29 @@ describe Movies do
 			end
 		end
 	end
+
+	describe ".quit nil" do
 	
+		context "when type 'y'" do	
+			it "the program quits" do
+				cr = Movies.new
+				cr.choice = "y"
+				result = cr.quit()
+				expect(result).to eql (nil)
+			end
+		end
+	end
+	
+	describe ".quit wrong letter" do
+	
+		context "when type a letter" do	
+			it "the program says not a choice" do
+				cr = Movies.new
+				cr.choice = "z"
+				result = cr.quit()
+				expect(result).to eql ("Not a choice")
+			end
+		end
+	end
 	
 end
